@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'instagram_cloneapp.apps.InstagramCloneappConfig',
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
