@@ -18,3 +18,15 @@ This project is for creating a clone of the website for the popular photo app In
 * Like a picture and leave a comment on it.
 
 
+
+## Technologies used
+
+* Python 3.6
+* Django Framework
+* Linux/Ubuntu Operating System
+* PSQL DBMS (Database Management System)
+* HTML
+* CSS
+* Bootstrap
+
+
