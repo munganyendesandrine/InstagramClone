@@ -18,7 +18,6 @@ This project is for creating a clone of the website for the popular photo app In
 * Like a picture and leave a comment on it.
 
 
-
 ## Technologies used
 
 * Python 3.6
@@ -29,4 +28,13 @@ This project is for creating a clone of the website for the popular photo app In
 * CSS
 * Bootstrap
 
+
+## Project Setup Instruction
+
+You would need the following to access the website:
+*  Smart phone/PC/laptop/Desktop/Tablet or any PDA 
+*  Linux Terminal for getting the output 
+*  Visual Studio code or other code editors to edit codes
+*  Internet connectivity (either wireless or ethernet) 
+*  A web browser(Chrome is most recommendable).
 
