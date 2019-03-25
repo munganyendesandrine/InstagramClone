@@ -43,3 +43,7 @@ You would need the following to access the website:
 https://github.com/munganyendesandrine/InstagramClone
 
 
+## Contact Information
+
+For more information you may need, contact me at mungasandwingsd@gmail.com
+
