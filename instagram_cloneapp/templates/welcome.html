@@ -14,12 +14,23 @@
     <div class="col-md-3">
       <strong>{{i.username}}</strong>
     </div>
+    <div class="col-md-3">
+      <strong>{{i.bio}}</strong>
+    </div>
     {% endfor %}
   </div> </div>
   <div class="panel-body">
+    <div class="imgnew">
+      {% for j in img %}
+       <strong>{{j.image_name}}</strong>
+       <img src="{{j.image.url}}" class="img-responsive" alt="Image" width=400 height=400 class="avatar">
+      {% endfor %}
+    </div>
+  </div>
     <!-- <p><a href="#" class="btn btn-primary ">Upload Image</a></p> -->
   </div>
-  <p><a href="#" class="btn btn-primary ">Upload Image</a></p>
+  <p><a href="{%url 'mypicture'%}" class="btn btn-primary ">Upload Image</a></p>
 </div>
 </div>  
+ 
 {% endblock %}

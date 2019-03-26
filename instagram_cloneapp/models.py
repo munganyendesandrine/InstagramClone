@@ -23,11 +23,15 @@ class Image(models.Model):
     post = HTMLField()
     image_caption = models.CharField(max_length =30)
     profile = models.ForeignKey(Profile)
-    like = models.IntegerField()
+    likes = models.IntegerField()
     comments=models.CharField(max_length =80)
     
     def __str__(self):
         return self.image_name
+
+    @classmethod
+    def get_image(cls,id):
+        Image.objects.all()
 
     def save_image(self):
         self.save()   

@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .forms import ProfileForm
+from .forms import ProfileForm,ImageForm
 from django.contrib.auth.decorators import login_required
 from .models import Profile,Image
 
@@ -7,7 +7,8 @@ from .models import Profile,Image
 @login_required(login_url='/accounts/login/')
 def welcome(request):
     picture = Profile.objects.all()
-    return render(request,'welcome.html',{"picture": picture})
+    img = Image.objects.all()
+    return render(request,'welcome.html',{"picture": picture,"img": img})
     
 @login_required(login_url='/accounts/login/')
 def my_profile(request):
@@ -23,6 +24,21 @@ def my_profile(request):
     else:
         form = ProfileForm()
     return render(request, 'profile.html', {"form": form})
+
+@login_required(login_url='/accounts/login/')
+def my_picture(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = ImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            picture = form.save(commit=False)
+            picture.user = current_user
+            picture.save()
+        return redirect('welcome')
+
+    else:
+        form = ImageForm()
+    return render(request, 'pictures.html', {"form": form})
 
 
 
