@@ -1,11 +1,13 @@
 from django.shortcuts import render,redirect
 from .forms import ProfileForm
 from django.contrib.auth.decorators import login_required
+from .models import Profile,Image
 
 # Create your views here.
 
 def welcome(request):
-    return render(request,'welcome.html')
+    picture = Profile.objects.all()
+    return render(request,'welcome.html',{"picture": picture})
     
 @login_required(login_url='/accounts/login/')
 def my_profile(request):
@@ -21,6 +23,8 @@ def my_profile(request):
     else:
         form = ProfileForm()
     return render(request, 'profile.html', {"form": form})
+
+
 
 
    

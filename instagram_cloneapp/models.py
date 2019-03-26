@@ -1,8 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
+from tinymce.models import HTMLField
 
 # Create your models here.
-from tinymce.models import HTMLField
+
 class Profile(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     username=models.CharField(max_length =30)
@@ -11,6 +12,10 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.bio
+
+    @classmethod
+    def get_picture(cls,id):
+        Profile.objects.all()
 
 class Image(models.Model):
     image = models.ImageField(upload_to = 'picture/')
