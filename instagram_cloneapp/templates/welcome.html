@@ -3,12 +3,23 @@
   <h1><center>Instagram Clone App</center></h1>
    <br><br>
   <div class="container">
+  
+<div class="panel panel-info">
+  <div class="panel-heading">
     {% for i in picture %}
-      <div class="row">
-        <div class="col-md-4">
-          <img src="{{i.profile_photo.url}}" class="img-responsive" alt="Image" width=400 height=400>   
-        </div>
-      {% endfor %}
+  <div class="row">
+    <div class="col-md-4">
+      <img src="{{i.profile_photo.url}}" class="img-responsive" alt="Image" width=400 height=400 class="avatar">
     </div>
-  </div>    
+    <div class="col-md-3">
+      <strong>{{i.username}}</strong>
+    </div>
+    {% endfor %}
+  </div> </div>
+  <div class="panel-body">
+    <!-- <p><a href="#" class="btn btn-primary ">Upload Image</a></p> -->
+  </div>
+  <p><a href="#" class="btn btn-primary ">Upload Image</a></p>
+</div>
+</div>  
 {% endblock %}
