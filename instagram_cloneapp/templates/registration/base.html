@@ -1,5 +1,5 @@
 {% load bootstrap3 %}
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -21,8 +21,8 @@
 </head>
 
 <body>
-
-  {% block content %}  {%endblock%}
+  {% include "navbar.html" %}
+  {% block content %} <h1 class='text-center'>Instagram clone  </h1> {%endblock%}
 
 
   {% block scripts %}
@@ -33,3 +33,5 @@
 </body>
 
 </html>
+
+
