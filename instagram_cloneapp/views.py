@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Profile,Image
 
 # Create your views here.
-
+@login_required(login_url='/accounts/login/')
 def welcome(request):
     picture = Profile.objects.all()
     return render(request,'welcome.html',{"picture": picture})
