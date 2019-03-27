@@ -1,14 +1,16 @@
 from django.shortcuts import render,redirect
-from .forms import ProfileForm,ImageForm
+from .forms import ProfileForm,ImageForm,CommentsForm
 from django.contrib.auth.decorators import login_required
-from .models import Profile,Image
+from .models import Profile,Image,Comments
 
 # Create your views here.
 @login_required(login_url='/accounts/login/')
 def welcome(request):
     picture = Profile.objects.all()
     img = Image.objects.all()
-    return render(request,'welcome.html',{"picture": picture,"img": img})
+    postsNumber=Image.objects.all().count()
+    commenting=Comments.objects.all()
+    return render(request,'welcome.html',{"picture": picture,"img": img,"commenting":commenting})
     
 @login_required(login_url='/accounts/login/')
 def my_profile(request):
@@ -40,6 +42,20 @@ def my_picture(request):
         form = ImageForm()
     return render(request, 'pictures.html', {"form": form})
 
+@login_required(login_url='/accounts/login/')
+def my_comment(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = CommentsForm(request.POST, request.FILES)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.user = current_user
+            comment.save()
+        return redirect('welcome')
+
+    else:
+        form = CommentsForm()
+    return render(request, 'comments.html', {"form": form})
 
 
 

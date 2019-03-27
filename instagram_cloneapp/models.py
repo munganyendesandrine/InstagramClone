@@ -24,7 +24,6 @@ class Image(models.Model):
     image_caption = models.CharField(max_length =30)
     profile = models.ForeignKey(Profile)
     likes = models.IntegerField()
-    comments=models.CharField(max_length =80)
     
     def __str__(self):
         return self.image_name
@@ -32,6 +31,10 @@ class Image(models.Model):
     @classmethod
     def get_image(cls,id):
         Image.objects.all()
+
+    @classmethod
+    def count_posts(cls,id):
+        Image.objects.all().count()
 
     def save_image(self):
         self.save()   
@@ -44,10 +47,20 @@ class Image(models.Model):
     
     class Meta:
         ordering = ['image_name']  
-    # @classmethod
-    # def search_by_category(cls,search_term):
-    #     image_category=Category.objects.filter(name__icontains=search_term)
-    #     images = cls.objects.filter(image_category=image_category)
-    #     return images 
-   
 
+
+
+
+class Comments(models.Model):
+   
+    comments=models.CharField(max_length =80)
+
+    def save_comment(self):
+        self.save() 
+
+    @classmethod
+    def get_comment(cls,id):
+        Comments.objects.all()
+    
+    def __str__(self):
+        return self.comments

@@ -5,14 +5,12 @@ from django.conf.urls.static import static
 
 
 urlpatterns=[
-    # url(r'^$',views.my_profile, name='myprofile'),
+
     url(r'^$',views.welcome, name='welcome'),
-    # url('^$',views.my_profile,name = 'myprofile'),
     url(r'^new/profile$', views.my_profile, name='myprofile'),
     url(r'^new/picture$', views.my_picture, name='mypicture'),
-    # url(r'^archives/(\d{4}-\d{2}-\d{2})/$',views.past_days_news,name = 'pastNews'),
-    # url(r'^search/', views.search_results, name='search_results'),
-    # url(r'^article/(\d+)',views.article,name ='article'),
+    url(r'^new/comment$', views.my_comment, name='mycomment'),
+
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
