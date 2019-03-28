@@ -1,64 +1,62 @@
 {%extends 'registration/base.html'%}
 {% block content %} 
-  <h1><center>Instagram Clone App</center></h1>
-   <br><br>
+  <h1><center>Instagram Clone App</center></h1><br><br>
   <div class="container">
-  
-<div class="panel panel-info">
-  <div class="panel-heading">
-    {% for i in picture %}
-  <div class="row">
-    <div class="col-md-4">
-      <img src="{{i.profile_photo.url}}" class="img-responsive" alt="Image" width=400 height=400 class="avatar">
-    </div>
-    <div class="col-md-3">
-      <strong>{{i.username}}</strong>
-    </div>
-    <!-- <div class="col-md-3">
-      <strong>{{i.bio}}</strong>
-    </div> -->
-    <div class="col-md-1">
-      <strong>Posts:
-        <!-- {{i.username}} -->
-      </strong>
-    </div>
-    <div class="col-md-1">
-      <strong>Following:</strong>
-    </div>
-    <div class="col-md-1">
-      <strong>Likes:</strong>
-    </div>
-    {% endfor %}
-
-  </div> </div>
-  <div class="panel-body">
-    <div class="imgnew">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            {% for i in picture %}
+          <div class="row">
+            <div class="col-md-4">
+              <img src="{{i.profile_photo.url}}" class="img-responsive" alt="Image" width=400 height=400 class="avatar">
+            </div>
+            <div class="col-md-3">
+              <strong>{{i.username}}</strong>
+            </div>
+            <!-- <div class="col-md-3">
+              <strong>{{i.bio}}</strong>
+            </div> -->
+            <div class="col-md-1">
+              <strong>Posts:
+                <!-- {{i.username}} -->
+              </strong>
+            </div>
+            <div class="col-md-1">
+              <strong>Following:</strong>
+            </div>
+            <div class="col-md-1">
+              <strong>Likes:</strong>
+            </div>
+            {% endfor %}
         
-      {% for j in img %}
-      <div class="row">
-          <div class="col-md-4">
-       <strong>{{j.image_name}}</strong>
-       <a href="{%url 'mycomment'%}"><img src="{{j.image.url}}" class="img-responsive" alt="Image" class="avatar"></a>
-      </div>
-      {% endfor %}
-
-      <h3><u>Comments</u></h3>
-      {% for z in commenting %}
-      <div class="row">
-          <div class="col-md-3">
-      <strong>{{z.comments}} <br></strong>
-      </div>
-      {% endfor %}
-
+          </div> </div>
+          <div class="panel-body">
+            <div class="imgnew">
+                
+              {% for j in img %}
+              <div class="row">
+                  <div class="col-md-4">
+               <strong>{{j.image_name}}</strong>
+               <a href="{%url 'mycomment'%}"><img src="{{j.image.url}}" class="img-responsive" alt="Image" class="avatar"></a>
+              </div>
+              {% endfor %}
+        
+              <h3><u>Comments</u></h3>
+              {% for z in commenting %}
+              <div class="row">
+                  <div class="col-md-3">
+              <strong>{{z.comments}} <br></strong>
+              </div>
+              {% endfor %}
+        
+            </div>
+            <br>
+            </div>
+          </div>
+            <!-- <p><a href="#" class="btn btn-primary ">Upload Image</a></p> -->
+          </div>
+          <p><a href="{%url 'mypicture'%}" class="btn btn-primary ">Upload Image</a></p>
+          <!-- <p><a href="{%url 'mycomment'%}" class="btn btn-primary ">Add Comment</a></p> -->
     </div>
-    <br>
-    </div>
-  </div>
-    <!-- <p><a href="#" class="btn btn-primary ">Upload Image</a></p> -->
-  </div>
-  <p><a href="{%url 'mypicture'%}" class="btn btn-primary ">Upload Image</a></p>
-  <!-- <p><a href="{%url 'mycomment'%}" class="btn btn-primary ">Add Comment</a></p> -->
-</div>
-</div>  
+  </div>  
  
 {% endblock %}
