@@ -10,7 +10,7 @@
               <img src="{{i.profile_photo.url}}" class="img-responsive" alt="Image" width=400 height=400 class="avatar">
             </div>
             <div class="col-md-3">
-              <strong>{{i.username}}</strong>
+              <strong>{{i.user}}</strong>
             </div>
            
             <div class="col-md-1">
@@ -41,7 +41,7 @@
           
             </div>
           </div>
-            <!-- <p><a href="#" class="btn btn-primary ">Upload Image</a></p> -->
+        
           </div>
           <h3 class='text-center'><u>Comments</u></h3><br>
           {% for z in commenting %}
@@ -63,10 +63,5 @@
     </div>
   </div>  
   
-  <!-- {% for i in list1 %}
-    <tr>
-        <td>{{ i }}</td>
-    </tr>
-{% endfor %} -->
 
 {% endblock %}

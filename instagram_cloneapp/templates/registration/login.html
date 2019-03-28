@@ -24,13 +24,15 @@
             {% bootstrap_form form%}
 
             <div class="form-group">
-              <input type="submit" class="btn btn-primary btn-sm" value="Login">
+              <input type="submit" class="btn btn-primary btn-sm" value="Login"><br><br>
+              
             </div>
 
             <input type="hidden" name="next" value="{{next}}">
 
           </form>
-
+          <p><strong>Don't Have an account?You can create it by clicking the "Sign Up" button!</strong></p>
+          <a href="/accounts/register/"><input type="submit" class="btn btn-primary btn-sm" value="Sign Up"></a>
         </div>
 
       </div>
