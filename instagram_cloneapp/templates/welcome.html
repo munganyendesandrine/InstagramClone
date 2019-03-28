@@ -16,9 +16,7 @@
               <strong>{{i.bio}}</strong>
             </div> -->
             <div class="col-md-1">
-              <strong>Posts:
-                <!-- {{i.username}} -->
-              </strong>
+              <strong>Posts: <!-- {{i.username}} --> </strong>
             </div>
             <div class="col-md-1">
               <strong>Following:</strong>
@@ -28,35 +26,44 @@
             </div>
             {% endfor %}
         
-          </div> </div>
-          <div class="panel-body">
-            <div class="imgnew">
+          </div> 
+        </div>
+        <div class="panel-body">
+          <div class="imgnew">
                 
-              {% for j in img %}
+            {% for j in img %}
               <div class="row">
                   <div class="col-md-4">
-               <strong>{{j.image_name}}</strong>
-               <a href="{%url 'mycomment'%}"><img src="{{j.image.url}}" class="img-responsive" alt="Image" class="avatar"></a>
-              </div>
+                    <strong>{{j.image_name}}</strong>
+                    <a href="{%url 'mycomment'%}"><img src="{{j.image.url}}" class="img-responsive" alt="Image" class="avatar"></a>
+                  </div>
               {% endfor %}
         
-              <h3><u>Comments</u></h3>
-              {% for z in commenting %}
-              <div class="row">
-                  <div class="col-md-3">
-              <strong>{{z.comments}} <br></strong>
-              </div>
-              {% endfor %}
-        
-            </div>
-            <br>
+          </div>
+            <!-- <br> -->
             </div>
           </div>
             <!-- <p><a href="#" class="btn btn-primary ">Upload Image</a></p> -->
           </div>
-          <p><a href="{%url 'mypicture'%}" class="btn btn-primary ">Upload Image</a></p>
-          <!-- <p><a href="{%url 'mycomment'%}" class="btn btn-primary ">Add Comment</a></p> -->
+          <h3 class='text-center'><u>Comments</u></h3><br>
+          {% for z in commenting %}
+          <div class="row">
+              <div class="col-md-4">
+                <strong>{{z.comments}} <br></strong>
+              </div>
+          {% endfor %}<br>
+          
+          </div>
+          <br><br><br>
+          <div class="col-md-2">
+            <p class='text-center'><a href="{%url 'mypicture'%}" class="btn btn-primary ">Upload Image</a></p>
+          </div>
+          <div class="col-md-2">
+          <p class='text-center'><a href="{%url 'mycomment'%}" class="btn btn-primary ">Add Comment</a></p>
+        </div>
+        </div>
     </div>
   </div>  
- 
+
+  
 {% endblock %}
