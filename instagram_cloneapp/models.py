@@ -23,7 +23,7 @@ class Image(models.Model):
     post = HTMLField()
     image_caption = models.CharField(max_length =30)
     profile = models.ForeignKey(Profile)
-    likes = models.IntegerField()
+    # likes = models.IntegerField()
     
     def __str__(self):
         return self.image_name
@@ -34,7 +34,7 @@ class Image(models.Model):
 
     @classmethod
     def count_posts(cls,id):
-        Image.objects.all().count()
+        Image.objects.all()
 
     def save_image(self):
         self.save()   

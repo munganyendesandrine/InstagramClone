@@ -12,17 +12,15 @@
             <div class="col-md-3">
               <strong>{{i.username}}</strong>
             </div>
-            <!-- <div class="col-md-3">
-              <strong>{{i.bio}}</strong>
-            </div> -->
+           
             <div class="col-md-1">
-              <strong>Posts: <!-- {{i.username}} --> </strong>
+              <strong><u>Posts</u>: {{postsNumber}} </strong>
             </div>
             <div class="col-md-1">
-              <strong>Following:</strong>
+              <strong><u>Following</u>:</strong>
             </div>
             <div class="col-md-1">
-              <strong>Likes:</strong>
+              <strong><u>Likes</u>:</strong>
             </div>
             {% endfor %}
         
@@ -40,7 +38,7 @@
               {% endfor %}
         
           </div>
-            <!-- <br> -->
+          
             </div>
           </div>
             <!-- <p><a href="#" class="btn btn-primary ">Upload Image</a></p> -->
@@ -64,6 +62,11 @@
         </div>
     </div>
   </div>  
-
   
+  <!-- {% for i in list1 %}
+    <tr>
+        <td>{{ i }}</td>
+    </tr>
+{% endfor %} -->
+
 {% endblock %}

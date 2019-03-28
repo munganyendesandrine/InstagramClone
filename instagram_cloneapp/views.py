@@ -8,9 +8,13 @@ from .models import Profile,Image,Comments
 def welcome(request):
     picture = Profile.objects.all()
     img = Image.objects.all()
-    postsNumber=Image.objects.all().count()
     commenting=Comments.objects.all()
-    return render(request,'welcome.html',{"picture": picture,"img": img,"commenting":commenting})
+    postsNumber=Image.objects.all()
+    num = len(postsNumber)
+    print(num)
+   
+    return render(request,'welcome.html',{"picture": picture,"img": img,"commenting": commenting,"postsNumber": num})
+
     
 @login_required(login_url='/accounts/login/')
 def my_profile(request):
