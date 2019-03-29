@@ -19,18 +19,9 @@ from django.contrib.auth import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    # url(r'^',include('instagram_cloneapp.urls',namespace="instagram_cloneapp")),
     url(r'',include('instagram_cloneapp.urls')),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^logout', views.logout, {"next_page": '/'}), 
 ]
 
-# 1
-
-# Here is the issue:
-
-# url(r'^$', include('app.urls')),
-# Should be
-
-# url(r'^', include('app.urls', namespace="app")),

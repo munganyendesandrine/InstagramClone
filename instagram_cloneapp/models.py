@@ -34,7 +34,7 @@ class Image(models.Model):
 
     @classmethod
     def count_posts(cls,id):
-        Image.objects.all()
+        Image.objects.all().count()
 
     def save_image(self):
         self.save()   
